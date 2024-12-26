@@ -46,7 +46,7 @@ def search_book(book_library, book_title):
     for book in book_library:
         if book["Title"].lower() == book_title.lower():  # Case-insensitive search
             return f"The book '{book_title}' by {book['Author']} was found in the library."
-    return f"The book '{book_title}' was  found in the library."
+    return f"The book '{book_title}' was not found in the library."
 
 # Function to view books currently on loan
 
@@ -58,7 +58,7 @@ def view_books_on_loan():
         for book in borrowed_book:
             print(f"Title: {book['Title']}, Author: {book['Author']}, Year: {book['Year of Publication']}")
 
-# this block of code is used for checking out book removed from the library
+# Function to borrow a book from the library
 
 def borrow_book(book_library):
     book_to_borrow = input("Please enter the book title to borrow: ")
@@ -70,7 +70,7 @@ def borrow_book(book_library):
             return f"The book '{book_to_borrow}' by {book['Author']} was borrowed."
     return f"The book '{book_to_borrow}' is not available in the library."
 
-# this block of code is used for tracking book returned to the library
+# Function to return a borrowed book to the library
 
 def return_book(borrowed_book):
     book_to_return = input("Please enter the book title to return: ")
